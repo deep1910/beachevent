@@ -33,6 +33,7 @@ const typeDefs = gql`
   type Event {
     _id: ID
     name: String
+    information: String
     host: Establishment
     dates: [Date]
     attendees: [User]

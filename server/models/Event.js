@@ -9,6 +9,10 @@ const eventSchema = new Schema(
       required: true,
       trim: true,
     },
+    information: {
+      type: String,
+      required: true,
+    },
     host: {
       type: Schema.Types.ObjectId,
       ref: "Establishment",

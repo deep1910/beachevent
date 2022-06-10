@@ -69,18 +69,23 @@ db.once("open", async () => {
 
   await Event.create({
     name: "Virginia Summer Bash 2022",
+    information:"Come join us for the hottest party this summer in Virginia Beach",
     host: establishment1,
     dates: [date1, date3],
   });
 
   await Event.create({
     name: "Miami Party 2022",
+    information:
+      "What better place to have an event other than Miami.  Come visit us!",
     host: establishment3,
     dates: [date2],
   });
 
   await Event.create({
     name: "Ocean Night 2022",
+    information:
+      "Its going to be an amazing night of fireworks and games.  Lets have some fun!",
     host: establishment2,
     dates: [date4],
   });
