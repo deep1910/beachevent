@@ -40,6 +40,7 @@ const ImageContainer = styled.div`
 const Events = () => {
   const { loading, data: eventData } = useQuery(QUERY_EVENTS);
   console.log(eventData);
+  
 
   return (
     <Section>

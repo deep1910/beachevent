@@ -59,6 +59,9 @@ const Navbar = () => {
           <Link to="/news">News</Link>
         </MenuItem>
         <MenuItem>MyEvents</MenuItem>
+        <MenuItem>
+          <Link to="/login">Login</Link>
+        </MenuItem>
       </Menu>
     </Section>
   );
