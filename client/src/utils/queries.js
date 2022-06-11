@@ -44,6 +44,7 @@ export const QUERY_EVENTS = gql`
         time
       }
       attendees {
+        number
         _id
         name
         email

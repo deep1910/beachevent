@@ -53,6 +53,7 @@ const Navbar = () => {
           <Link to="/events">Events</Link>
         </MenuItem>
         <MenuItem>Establishments</MenuItem>
+          <Link to="/establishments">Establishements</Link>
         <MenuItem>
           <Link to="/news">News</Link>
         </MenuItem>

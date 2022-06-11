@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Navbar from "../SubComponents/Navbar";
+
 import img2 from "../assets/img2.png";
 import { useQuery } from "@apollo/react-hooks";
 import { QUERY_EVENTS } from "../utils/queries";
@@ -37,7 +38,7 @@ const ImageContainer = styled.div`
 `;
 
 const Events = () => {
-  const { loading, data: eventData } = useQuery(QUERY_EVENTS);
+  const { loading, data:eventData } = useQuery(QUERY_EVENTS);
   console.log(eventData);
   return (
     <Section>
