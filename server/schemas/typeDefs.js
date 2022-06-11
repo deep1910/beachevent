@@ -57,6 +57,40 @@ const typeDefs = gql`
     addUser(name: String!, email: String!, password: String!): Auth
 
     updateUser(name: String, email: String): User
+
+    addEstablishment(
+      name: String!
+      address: String!
+      city: String!
+      state: String!
+      zipCode: String!
+      phoneNumber: String!
+    ): Establishment
+
+    updateEstablishment(
+      name: String
+      address: String
+      city: String
+      state: String
+      zipCode: String
+      phoneNumber: String
+    ): Establishment
+
+    addEvent(
+      name: String!
+      information: String!
+      host: ID!
+      dates: [String!]
+    ): Event
+
+    updateEvent(
+      name: String
+      information: String
+      host: ID!
+      dates: [String!]
+    ): Event
+
+    deleteEvent(id: ID!): Event
   }
 `;
 

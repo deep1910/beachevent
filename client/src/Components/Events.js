@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Navbar from "../SubComponents/Navbar";
+
 import { useQuery } from "@apollo/react-hooks";
 import { QUERY_EVENTS } from "../utils/queries";
 
@@ -32,7 +33,7 @@ const BlackWrapper = styled.div`
 `;
 
 const ImageContainer = styled.div`
-  width: 100%;
+ width: 100%;
   height: calc(100vh - 6rem);
 
   img {
@@ -40,7 +41,9 @@ const ImageContainer = styled.div`
     height: 100%;
     object-fit: fill;
   }
-`;
+`
+ 
+
 
 
 const Heading = styled.div`
@@ -152,7 +155,6 @@ const NewContainer = ({ img, type, link, event, location, date}) => {
 const Events = () => {
   const { loading, data: eventData } = useQuery(QUERY_EVENTS);
   console.log(eventData);
-  
   return (
     
 

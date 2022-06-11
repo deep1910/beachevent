@@ -58,7 +58,9 @@ const Navbar = () => {
         <MenuItem>
           <Link to="/events">Events</Link>
         </MenuItem>
-        <MenuItem>Establishments</MenuItem>
+        <MenuItem>
+          <Link to="/establishments">Establishements</Link>
+        </MenuItem>
         <MenuItem>MyEvents</MenuItem>
       </Menu>
     </Section>
