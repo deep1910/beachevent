@@ -6,9 +6,8 @@ import { useQuery } from "@apollo/react-hooks";
 import { QUERY_EVENTS } from "../utils/queries";
 
 import party1 from "../assets/party1.jpg";
-import event2 from '../assets/event2.jpg'
+import event2 from "../assets/event2.jpg";
 import img2 from "../assets/img2.png";
-
 
 const Section = styled.div`
   width: 100vw;
@@ -33,7 +32,7 @@ const BlackWrapper = styled.div`
 `;
 
 const ImageContainer = styled.div`
- width: 100%;
+  width: 100%;
   height: calc(100vh - 6rem);
 
   img {
@@ -41,10 +40,7 @@ const ImageContainer = styled.div`
     height: 100%;
     object-fit: fill;
   }
-`
- 
-
-
+`;
 
 const Heading = styled.div`
   width: 85%;
@@ -85,79 +81,76 @@ const MainContainer = styled.div`
   position: relative;
   transition: all 0.2s ease;
 
-  &:hover{
-      transform: scale(1.1);
-    }
+  &:hover {
+    transform: scale(1.1);
+  }
 `;
 
 const ImagContainer = styled.div`
   width: 100%;
   height: 100%;
   object-fit: fill;
-  
+
   img {
     width: 35vw;
     height: 40vh;
-    
   }
 `;
 
 const Event = styled.div`
-position: absolute;
-bottom: 1rem;
-left: 0.5rem;
-z-index: 5;
-color: white;
-padding: 4px;
-/* border: 1px solid yellow; */
+  position: absolute;
+  bottom: 1rem;
+  left: 0.5rem;
+  z-index: 5;
+  color: white;
+  padding: 4px;
+  /* border: 1px solid yellow; */
 
-h1{
-  font-size: 2rem;
-  cursor: pointer;
-}
+  h1 {
+    font-size: 2rem;
+    cursor: pointer;
+  }
 
-h2{
-  color: orange;
-  font-size: 1rem;
-}
+  h2 {
+    color: orange;
+    font-size: 1rem;
+  }
 
-h3{
-  font-size: 0.9rem;
-}
-`
+  h3 {
+    font-size: 0.9rem;
+  }
+`;
 
 const Details = styled.div`
-display: flex;
-justify-content: space-between;
-align-items: center;
-`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
 
-const NewContainer = ({ img, type, link, event, location, date}) => {
+const NewContainer = ({ img, type, link, event, location, date }) => {
   return (
     <MainContainer>
       <ImagContainer>
         <img src={img} alt="news" />
       </ImagContainer>
       <Event>
-      <h2>{type}</h2>
-      
-      <h1>{event}</h1>
-      <Details>
-      <h3>{location}</h3>
-      <h3>{date}</h3>
-      </Details>
+        <h2>{type}</h2>
+
+        <h1>{event}</h1>
+        <Details>
+          <h3>{location}</h3>
+          <h3>{date}</h3>
+        </Details>
       </Event>
     </MainContainer>
   );
 };
-
 
 const Events = () => {
   const { loading, data: eventData } = useQuery(QUERY_EVENTS);
   console.log(eventData);
 
   return (
-
     <Section>
       <Navbar />
       <Heading>
@@ -165,17 +158,25 @@ const Events = () => {
         <h2>Look what's happening around </h2>
       </Heading>
       <NewsBox>
-        <NewContainer img={party1} type="Experience" link="//beacheventsvb.com/events/oceanfront-concert-series-carbon-leaf/" event="Splash Electronic dance party" location="Virginia beach" date="11/06/2022" />
-        <NewContainer img={party1} type="Experience" event="Splash Electronic dance party" date="11/06/2022" />
-        <NewContainer img={event2} type="Concert" event="Splash Electronic dance party" date="11/06/2022" />
-        <NewContainer img={party1} type="Experience" event="Splash Electronic dance party" date="11/06/2022" />
-        <NewContainer img={party1} type="Experience" event="Splash Electronic dance party" date="11/06/2022" />
-        <NewContainer img={party1} type="Experience" event="Splash Electronic dance party" date="11/06/2022" />
+        {loading ? (
+          <h3>Loading...</h3>
+        ) : (
+          eventData.events.map((event) => (
+            <NewContainer
+              key={event._id}
+              img={party1}
+              type="Experience"
+              link="//beacheventsvb.com/events/oceanfront-concert-series-carbon-leaf/"
+              event={event.name}
+              location={event.host.city}
+              date={event.dates[0].day}
+            />
+          ))
+        )}
       </NewsBox>
     </Section>
   );
 };
-
 
 // <Section>
 //       <BlackWrapper />
