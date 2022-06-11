@@ -38,14 +38,26 @@ const ImageContainer = styled.div`
 `;
 
 const Events = () => {
-  const { loading, data:eventData } = useQuery(QUERY_EVENTS);
+  const { loading, data: eventData } = useQuery(QUERY_EVENTS);
   console.log(eventData);
+
   return (
     <Section>
       <BlackWrapper />
       <Navbar />
       <ImageContainer>
         <img src={img2} alt="beach" />
+        {loading ? (
+          <div>Loading...</div>
+        ) : (
+          eventData.events.map((event) => (
+            <div>
+              <div>{event.name}</div>
+              <div>{event.information}</div>
+              <div>{event.host.name}</div>
+            </div>
+          ))
+        )}
       </ImageContainer>
     </Section>
   );

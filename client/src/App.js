@@ -7,12 +7,12 @@ import News from "./Components/News";
 function App() {
   return (
     <>
-    <GlobalStyles/>
-    <Routes>
-    <Route path="/" element={<Home/>} />
-    <Route path="/events" element={<Events/>} />  
-    <Route path="/news" element={<News/>} />  
-    </Routes>
+      <GlobalStyles />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/events" element={<Events />} />
+        <Route path="/news" element={<News />} />
+      </Routes>
     </>
   );
 }
