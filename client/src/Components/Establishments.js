@@ -28,8 +28,7 @@ const locationContainer = styled.div`
     padding: 1vw;
     margin: 1vw;
     color: #0ffff0;
-}
-`;
+`
 
 const EstablishContainer = styled.div`
     border: 3px solid black;
@@ -39,8 +38,7 @@ const EstablishContainer = styled.div`
     justify-content: space-around;
     margin: 4vw;
     padding: 3vw;
-}
-`;
+`
 
 const Establishments = () => {
   const { loading, data: establishData } = useQuery(QUERY_ESTABLISHMENTS);
