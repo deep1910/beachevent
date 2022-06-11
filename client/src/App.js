@@ -2,7 +2,8 @@ import Home from "./Components/Home";
 import GlobalStyles from "./Styles/GlobalStyles";
 import { Routes, Route } from "react-router-dom";
 import Events from "./Components/Events";
-import News from "./Components/News";
+import Explore from "./Components/Explore";
+import Accomodations from "./Components/Accomodations";
 
 function App() {
   return (
@@ -10,8 +11,9 @@ function App() {
     <GlobalStyles/>
     <Routes>
     <Route path="/" element={<Home/>} />
-    <Route path="/events" element={<Events/>} />  
-    <Route path="/news" element={<News/>} />  
+    <Route path="/explore" element={<Explore/>} />
+    <Route path="/accomodations" element={<Accomodations/>} />
+    <Route path="/events" element={<Events/>} />
     </Routes>
     </>
   );

@@ -50,12 +50,15 @@ const Navbar = () => {
           <Link to="/">Home</Link>
         </MenuItem>
         <MenuItem>
+          <Link to="/explore">Explore</Link>
+        </MenuItem>
+        <MenuItem>
+          <Link to="/accomodations">Accomodations</Link>
+        </MenuItem>
+        <MenuItem>
           <Link to="/events">Events</Link>
         </MenuItem>
         <MenuItem>Establishments</MenuItem>
-        <MenuItem>
-          <Link to="/news">News</Link>
-        </MenuItem>
         <MenuItem>MyEvents</MenuItem>
       </Menu>
     </Section>
