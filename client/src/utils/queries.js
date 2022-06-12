@@ -60,6 +60,7 @@ export const QUERY_EVENTS = gql`
       information
       host {
         _id
+        name
         address
         city
         state
