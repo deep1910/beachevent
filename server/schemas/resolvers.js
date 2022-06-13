@@ -68,6 +68,14 @@ const resolvers = {
 
       return { token, user };
     },
+
+    addEstablishment: async (parent, args) => {
+      return Establishment.create(args);
+    },
+
+    updateEstablishment: async (parent, { id }) => {
+      const establishment = await Establishment.findByIdAndUpdate(id);
+    },
   },
 };
 

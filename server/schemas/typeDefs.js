@@ -68,6 +68,7 @@ const typeDefs = gql`
     ): Establishment
 
     updateEstablishment(
+      id: ID!
       name: String
       address: String
       city: String
